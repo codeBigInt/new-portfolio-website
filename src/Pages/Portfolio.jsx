@@ -25,32 +25,16 @@ const Portfolio = () => {
                     setTimeout(() => {
                         setIsCopied(false)
                     }, 1000)
+                    setErr('copied')
+                    console.log(err);
                 })
-                .catch(error => error)
-            }else{
-            const tempHolder = document.createElement('textarea')
-            tempHolder.className = 'aside'
-            tempHolder.value = projectLink
-            document.appendChild(tempHolder)
-
-            tempHolder.focus()
-            tempHolder.select()
-            try{
-                const isSuccessful = document.execCommand('copy')
-                if(isSuccessful){
-                    setIsCopied(true)
-                    setTimeout(() => {
-                        setIsCopied(false)
-                    }, 1000)
-                }else{
-                    setIsCopied(false)
-                }
-            }catch(error){
-                err ? setErr('Failed to COPY') : null
-                console.log(err);
-            }
-            document.removeChild(tempHolder)
-        }}else return 'error'
+                .catch(error => {
+                    if(error){
+                        setErr(`Didnt copy`)
+                        console.log(err);
+                    }
+                })
+            }}
     } 
 
     const handleDisplay = (id, e) => {
