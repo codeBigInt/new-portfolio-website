@@ -8,7 +8,7 @@ const Services = () => {
         {
                 icon: <FaLaptopCode />,
                 title: 'Responsive Design',
-                desc: 'We make sure your website is scallable on any device you users are using'
+                desc: 'Making sure your website is scallable on any device you users are using'
         },
         {
             icon: <FaCode  />,

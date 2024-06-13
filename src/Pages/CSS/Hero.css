@@ -3,14 +3,14 @@
 .hero-container{
     padding-top: 1em;
     width: 100%;
-    min-height: 100vh;
+    min-height: 500px;
     display: flex;
     color: var(--white);
     align-items: flex-start;
     justify-content: center;
-    background: var(--gradient);
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    background: linear-gradient(rgba(94, 40, 223, .6), rgba(94, 40, 223, .6)), url('../../assets/images/bg.jpg');
+    background-position: center;
+    background-size: cover;
 }
 
 /* GridBackground.css */
@@ -25,6 +25,7 @@
     z-index: 2;
     display: flex;
     height: 100%;
+    padding-bottom: 100px;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -113,7 +114,7 @@ nav{
     padding-top: 4em;
 }
 .small-text{
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .btn-dwn{
@@ -144,13 +145,13 @@ nav{
 }
 
 .intro{
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 700;
     text-transform: capitalize;
 }
 .typing_text{
     font-weight: 800;
-    font-size: 2.8em;
+    font-size: 3em;
     display: flex;
     align-items: center;
     gap: .5em;
@@ -246,11 +247,10 @@ nav{
 @media screen and (max-width: 900px) {
     .hero-container{
         min-height: 100%;
-        padding-bottom: 60px;
+        padding-bottom: 40px;
     }
     .content{
         width: 100%;
-        background: var(--gradient);
     }
     .content main{
         padding-top: 70px;
@@ -305,7 +305,7 @@ nav{
         padding: 0;
         width: 80%;
         text-align: left;
-        color: var(--accent);
+        color: black;
         padding-left: 0;
     }
     .navLink:active, .navLink:hover {
@@ -336,6 +336,7 @@ nav{
         padding: 0 1em;
     }
     .socials{
+        align-self: center;
         justify-content: center;
     }
     .controler{
@@ -348,12 +349,16 @@ nav{
     }
     .btn-dwn{
         font-size: 1.2em;
+        position: absolute;
+        bottom: 0;
+    }
+    .social_icons{
+        align-self: center;
     }
 }
 
 @media screen and (max-width: 600px) {
     .connect{
-        padding: 1em 0;
         width: 80%;
     }
 }
