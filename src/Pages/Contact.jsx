@@ -52,8 +52,8 @@ const Contact = () => {
     function handleFocus(){
         setIsFocused(true)
     }
-    function handleBlur(){
-        setIsFocused(false)
+    function handleBlur(e){
+        formData[e.target.name].length < 0 ? setIsFocused(false) : setIsFocused(true)
     }
     function handleChange(e) {
         const { name, value } = e.target
@@ -107,7 +107,7 @@ const Contact = () => {
                     <label className='label' htmlFor="email">Preffered Email</label>
                     <input className='input' type="email" name='user_email' value={formData.user_email}
                     onFocus={handleFocus}
-                    onBlur={handleBlur}
+                    onBlur={(e) => handleBlur(e)}
                     onChange={handleChange}
                     required
                     />
