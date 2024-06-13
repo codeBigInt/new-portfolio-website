@@ -220,7 +220,7 @@ nav{
     position: relative;
 }
 #typing::before{
-    top: 0; right: -83%;
+    top: 0; right: calc(-83% + -4px);
     position: relative;
     content: '';
     width: 100%;

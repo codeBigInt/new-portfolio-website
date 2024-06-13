@@ -16,7 +16,7 @@ const Hero = () => {
     const [displayedText, setDisplayedText] = useState('');
     const ctx = useContext(storeConetext)
    
-    const texts = ['Remote', 'Freelance'];
+    const texts = ['Remote', 'React Js', 'Next Js', 'JavaScript'];
   const typingSpeed = 200; // milliseconds per character
   const pauseBetweenTexts = 2000; // milliseconds between texts
 
