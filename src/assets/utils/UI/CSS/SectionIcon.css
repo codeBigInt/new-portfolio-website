@@ -1,0 +1,6 @@
+@import url('../../../variables.css');
+
+.gg-circle{
+    font-size: 28px;
+    color: var(--accent);
+}

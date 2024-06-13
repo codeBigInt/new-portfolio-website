@@ -1,0 +1,356 @@
+@import url(../../assets/variables.css);
+
+.hero-container{
+    padding-top: 1em;
+    width: 100%;
+    display: flex;
+    color: var(--white);
+    align-items: flex-start;
+    justify-content: center;
+    background: var(--gradient);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+/* GridBackground.css */
+
+
+:where(nav, .dwnLoad, .dwnLoad span, .socials, .social_icons, .connect, .avail){
+    display: flex;
+    align-items: center;
+}
+.content{
+    width: 90%;
+    z-index: 2;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+nav{
+    color: var(--white);
+    justify-content: space-between;
+    width: 100%;
+}
+.nav_brand{
+    text-transform: uppercase;
+}
+
+
+.nav_links{
+    position: relative;
+    z-index: 1000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex: 1 !important;
+    gap: 3em;
+    font-size: 12px;
+}
+.navLink{
+    position: relative;
+    padding: .5em 1em;
+    font-weight: 600;
+    color: var(--white);
+    background: transparent;
+}
+.navLink:hover::before{
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -20%;
+    width: 30%;
+    height: 30%;
+    background: transparent;
+    border-top: 2px solid var(--white);
+    border-left: 2px solid var(--white);
+}
+.navLink:hover::after{
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: -20%;
+    width: 30%;
+    height: 30%;
+    background: transparent;
+    border-bottom: 2px solid var(--white);
+    border-right: 2px solid var(--white);
+}
+
+
+.dwnLoad{
+    padding: .6em 1em;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid var(--white);
+    word-spacing: .3em;
+    justify-content: center;
+    gap: 1em;
+    color: var(--white);
+    font-size: 12px;
+}
+
+
+.content main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2em 0 2em  0;
+    line-height: 2em;
+    color: var(--white);
+    position: relative;
+}
+.intro-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+    gap: .5em;
+    padding-top: 1em;
+}
+.small-text{
+    font-size: 14px;
+}
+
+.btn-dwn{
+    position: absolute;
+    display: flex;
+    color: var(--white);
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid var(--white);
+    justify-content: center;
+    align-items: center;
+    bottom: -3%;
+    padding: .7em;
+    border-radius: 50%;
+    font-size: 1.5em;
+    animation: bounce 1s infinite;
+}
+@keyframes bounce {
+    0%{
+        bottom: -3%;
+    }
+    50%{
+        bottom: -5%;
+    }
+    100%{
+        bottom: -3%;
+    }
+}
+
+.intro{
+    font-size: 35px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.typing_text{
+    font-weight: 800;
+    font-size: 2.8em;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    width: 100%;
+}
+.socials{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.social_icons{
+    display: flex;
+    justify-content: flex-start;
+    gap: 3em;
+    pointer-events: auto;
+    justify-content: flex-start;
+    margin-left: -3%;
+}
+.social_links{
+    font-size: 28px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+.social_links:hover{
+    transition: .5s;
+    transform: scale(1.1, 1.1);
+}
+.connect{
+    padding: 1em;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--white);
+    gap: 2em;
+}
+.arrow{
+    font-size: 10px;
+    transform: rotate(45deg);
+}
+.controls{
+    width: 100%;
+    display: flex;
+    gap: 1em;
+}
+.socials{
+ display: flex;
+ justify-content: flex-start;
+}
+.social_links{
+    text-decoration: none;
+    color: var(--white);
+}
+.social_icons{
+    gap: 4em;
+}
+.controls button{
+    cursor: pointer;
+    color: var(--white);
+}
+
+
+
+/* Typing text animation an styling */
+#typing{
+    position: relative;
+    padding-right: 4px;
+}
+#typing::before{
+    top: 0; left: 0;
+    z-index: 1;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--gradient);
+    animation: typing-text 4s steps(12) infinite;
+    border-left: 3px solid var(--white);
+}
+.lobed_text{
+    position: relative;
+    z-index: 2;
+    line-height: 1.5em;
+}
+
+@keyframes typing-text {
+    40%, 60%{
+        left: calc(100%);
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .content{
+        width: 100%;
+        background: var(--gradient);
+    }
+    .content main{
+        padding-top: 90px;
+    }
+    .toggler{
+        background: transparent;
+        font-size: 22px;
+        color: var(--white);
+        padding-right: 1.5em;
+    }
+    nav{
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        top: 0;
+        padding: .5em 0;
+        z-index: 999;
+        border-bottom:  1px solid var(--grey);
+    }
+    .nav_brand{
+        color: var(--white);
+        padding-left: 1em;
+        font-size: .9em;
+    }
+    .black{
+        color: var(--accent);
+    }
+    .nav_links{
+        position: fixed;
+        z-index: 2;
+        top: 61px;
+        color: var(--accent);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 60%;
+        background: var(--white);
+        padding-top: 3em;
+        min-height: 100vh;
+        font-size: .8em;
+        }
+   
+    .overlay{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        z-index: -1;
+        top: 0;left: 0;
+        background-color: rgba(0, 0, 0, .2);
+    }
+    .navLink{
+        padding: 0;
+        width: 80%;
+        text-align: left;
+        color: var(--accent);
+        padding-left: 0;
+    }
+    .navLink:active, .navLink:hover {
+        padding: .7em 0;
+        border-top: 2px solid var(--accent);
+        border-bottom: 2px solid var(--accent);
+    }
+    .nav_links::before, .navLink:hover::after{
+        display: none;
+    }
+    .intro-cont{
+        align-items: center;
+    }
+    .intro{
+        font-size: 1.7em;
+    }
+    .typing_text{
+        width: 100%;
+        font-size: 2.2em;
+        flex-direction: column;
+    }
+    .lobed_text{
+        font-size: 28px;
+    }
+    .small-text{
+        text-align: center;
+        font-size: 12px;
+        padding: 0 1em;
+    }
+    .socials{
+        justify-content: center;
+    }
+    .controls{
+        flex-direction: column;
+    }
+    .connect{
+        width: 60%;
+        align-self: center;
+        border-radius: 5px;
+    }
+    .btn-dwn{
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .connect{
+        padding: 1em 0;
+        width: 80%;
+    }
+}
+

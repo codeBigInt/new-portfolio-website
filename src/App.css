@@ -1,0 +1,71 @@
+@import './assets//variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+.App{
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden !important;
+}
+:where(.APP header, .App main, .App footer){
+  width: 100%;
+}
+
+/* .APP header{
+  min-height: 100vh;
+} */
+#Services, #Portfolio{
+  padding-top: 80px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+#Portfolio{
+  padding-top: 0;
+}
+.kit-cont{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+.App main{
+  color: black;
+}
+#Contact{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.scrollUserToTop{
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+}
+#footer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 30vh;
+  background: var(--accent);
+  color: var(--white);
+}
+
+@media screen and (max-width: 600px) {
+  
+}

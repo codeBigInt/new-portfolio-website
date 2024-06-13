@@ -1,0 +1,232 @@
+.portfolio-container{
+    width: 90%;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio-container main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    padding: 1em;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+.readme{
+    background: rgb(63, 60, 71);
+    padding: 1em 2em;
+    color: var(--white);
+    border-radius: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+.showless{
+    background: rgb(63, 60, 71);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--white);
+    padding: 1em 2em;
+    gap: 1em;
+    border-radius: 10px;
+}
+.readme-area{
+    border-radius: 25px;
+    align-self: flex-start;
+    width: 100%;
+}
+.readme-header{
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
+    padding: 1em 0;
+    gap: 1em;
+}
+.project_cont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+}
+.project_card{
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    border-radius: 15px;
+    gap: 2em;
+    box-shadow: 1px -1px 20px rgba(0, 0, 0, .08), -1px 1px 20px rgba(0, 0, 0, .08);
+}
+.project_card img{
+    border-radius: 10px;
+    width: 40%;
+}
+
+.details-cont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-self: flex-end;
+}
+.controls{
+    display: flex;
+    align-items: flex-end;
+    gap: 1em;
+    width: 100%;
+}
+.controls button, .controls a, .see{
+    padding: .6em 1em;
+}
+.controls a, .see{
+    color: black;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: 14px;
+    border-radius: 10px;
+}
+.arrow-visit{
+    font-size: 10px;
+    transform: rotate(45deg);
+}
+.expand{
+    width: 95%;
+    font-size: 20px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.expand button{
+    position: relative;
+    font-size: 22px;
+    box-shadow: 1px -1px 15px rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    background: var(--white);
+    padding: .5em .6em;
+    cursor: pointer;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+}
+.expand button:hover::before{
+    position: absolute;
+    border-radius: 5px;
+    content: 'Read more';
+    padding: .3em;
+    font-size: 12px;
+    left: -250%;
+    background: var(--gradient);
+    color: var(--white);
+    letter-spacing: normal; 
+    width: 200%;
+}
+.expand button:hover::before::before{
+    position: absolute;
+    content: '';
+    top: -20%;
+    width: 100%;
+    height: 20%;
+}
+.copy-area p{
+    font-size: 12px;
+    width: 80%;
+}
+.git_link_cont{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.visit{
+    background: var(--gradient);
+    color: var(--white);
+    font-weight: bold;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aside{
+    margin-left: -500%;
+}
+.link_holder{
+    font-size: 14px;
+    overflow: hidden;
+}
+.red, .yellow, .green{
+    padding: .8em;
+    clip-path: circle();
+    background: #fff;
+}
+.red{
+    background: red;
+}
+.green{
+    background: green;
+}
+.yellow{
+    background: yellow;
+}
+.load{
+    display: flex;
+    gap: 1em;
+}
+
+@media screen and (max-width: 900px) {
+    .portfolio-container{
+        padding-top: 80px;
+    }
+    .project_card{
+        width: 95%;
+        padding: .7em;
+        flex-direction: column;
+    }
+    .project_card img{
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+    .details-cont, .controls{
+        width: 95%;
+    }
+    .link_holder{
+        font-size: 12px;
+    }
+    .copy-area{
+        width: 100%;
+    }
+    .controls{
+        flex-direction: column;
+    }
+    .visit{
+        cursor: none;
+    }
+    .project-go{
+        display: flex;
+        gap: 1em;
+        padding: 1em 0;
+        align-self: flex-start;
+    }
+    .see{
+        background: transparent;
+    }
+    .see span{
+        color: black;
+    }
+    .desc{
+        font-size: 14px;
+    }
+    .red, .green, .yellow{
+        padding: .6em;
+    }
+    .showless, .readme{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+}

@@ -1,0 +1,185 @@
+@import url(.././../assets/variables.css);
+.contact-container{
+    width: 90%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.cont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    padding-top: 2%;
+}
+.quick-reach{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.info-holder{
+    padding: .5em 1em;
+    width: 100%;
+    gap: 1em;
+    display: flex;
+    border-radius: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid var(--accent);
+}
+.info-cont{
+    line-height: 10px;
+    font-size: 10px;
+}
+.reach{
+    font-weight: 600;
+    font-size: 12px;
+}
+.icon-holder{
+    color: var(--white);
+    border-radius: 10px;
+    padding: .6em;
+    background: var(--accent);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    width: 50%;
+    gap: 2em;
+    padding: 3em 2em;
+    background: #dfd6fe;
+    color: var(--accent);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.field{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.input{
+    padding: 1.5em;
+    border-radius: 10px;
+    background: transparent;
+    border: 2px solid var(--accent);
+    font-weight: 600;
+}
+.label{
+    position: absolute;
+    z-index: 1;
+    left: 1em;
+    top: 30%;
+    font-size: 14px;
+    pointer-events: none;
+}
+.field .input:focus + label, .field.focused .label{
+    left: 1em;
+    top: -28%;
+    transition: .3s;
+    background: #dfd6fe;
+    padding: .3em .5em;
+    font-size: 12px;
+    font-weight: 800;
+}
+.field .area:focus + label, .field.focused .label{
+    top: -16%;
+}
+form button{
+    padding: 1em;
+    width: 40%;
+    border-radius: 15px;
+    background: var(--accent);
+    color: var(--white);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    align-self: center;
+}
+.kite{
+    font-size: 20px;
+}
+.scroll-user{
+    position: fixed;
+    right: 2%;
+    bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    z-index: 999;
+    transition: all 2s ease-in;
+}
+.hint{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hint button, .hint a{
+    position: relative;
+}
+.hint p{
+    font-size: 12px;
+    padding: .5em .7em;
+    border-radius: 5px;
+    color: var(--white);
+    background: var(--accent);
+    left: -190%;
+    position: absolute;
+}
+.hint p::before{
+    width: 10%;
+    height: 30%;
+    transform: rotate(45deg);
+    content: '';
+    top: 30%;
+    position: absolute;
+    right: -5%;
+    background: var(--accent);
+}
+.scroll-user button, .scroll-user a{
+    padding: 1em;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 900px) {
+    .cont{
+        width: 85%;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }
+    .contact-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .quick-reach{
+        width: 80%;
+        align-items: center;
+    }
+    form{
+        width: 85%;
+    }
+    form button{
+        width: 80%;
+    } 
+    .label{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 600px) {
+    
+}

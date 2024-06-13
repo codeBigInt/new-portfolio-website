@@ -1,0 +1,6 @@
+:root{
+    --gradient: linear-gradient(to right,#5e28df, 40%, #8031ec);
+    --accent: #5e28df;
+    --grey: #b8c7c6;
+    --white: #fefdfd;
+}

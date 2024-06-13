@@ -1,0 +1,46 @@
+.footer-cont{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+}
+.quote{
+    line-height: 12px;
+}
+.quote h1{
+    text-transform: uppercase;
+    font-size: 40px;
+}
+.follow{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    font-size: 12px;
+}
+.follow h3{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+.my-socials{
+    display: flex;
+    gap: 2em;
+    font-size: 30px;
+}
+.my-socials a{
+    color: var(--white);
+}
+@media screen and (max-width: 700px) {
+    .footer-cont{
+        flex-direction: column;
+        gap: 2em;
+    }
+    .quote p{
+        font-size: 12px;
+    }
+    .my-socials{
+        gap: 1.5em;
+        font-size: 25px;
+    }
+}

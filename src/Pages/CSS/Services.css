@@ -1,0 +1,122 @@
+.service-container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5%;
+}
+.GG{
+    font-size: 25px;
+    color: var(--accent);
+}
+.service-container main{
+    width: 90%;
+}
+.services-list{
+    position: relative;
+    padding-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    padding: 1em;
+    gap: 1.5em;
+}
+.services-list li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .5em;
+    padding: 2em 1em;
+    text-align: center;
+    background: #dfd6fe;
+    width: 25%;
+    border-radius: 20px;
+}
+.services-list li .icon{
+    position: relative;
+    font-size: 40px;
+    padding: .3em;
+    border-radius: 10px;
+    color: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--white);
+    z-index: 0;
+}
+.services-list li .icon::before{
+    content: '';
+    width: 125%;
+    height: 90%;
+    background: var(--white);
+    position: absolute;
+    top: 5%;left: -12.5%;
+    border-radius: 10px;
+    z-index: -1;
+}
+.services-list li:hover{
+    cursor: pointer;
+    background: transparent;
+    transition: all .5s;
+    border: 1px solid var(--accent);
+}
+.services-list li:hover  .icon{
+    color: var(--white);
+    background: var(--gradient);
+}
+.services-list li:hover .icon::before{
+    background: var(--gradient);
+}
+.services-list li .title{
+    font-size: 20px;
+}
+.services-list li .desc{
+    text-align: center;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 900px) {
+    .service-container main{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .services-list{
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    }
+    .services-list li{
+        width: 85%;
+        align-self: center;
+        text-align: center;
+        background: transparent;
+    }
+    .services-list li .icon::before{
+        background: var(--white);
+        
+    }
+    .services-list li{
+        border: 2px solid var(--accent);
+    }
+    .services-list li  .icon{
+        color: var(--white);
+        background: var(--gradient);
+    }
+    .services-list li .icon::before{
+        background: var(--gradient);
+    }
+    .services-list li .title{
+        font-size: 20px;
+    }
+    .services-list li .desc{
+        text-align: center;
+        font-size: 12px;
+    }
+}
