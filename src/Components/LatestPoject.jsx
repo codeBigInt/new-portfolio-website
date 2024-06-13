@@ -11,11 +11,11 @@ import SmallerText from '../assets/utils/UI/SmallerText'
 
 const LatestPoject = () => {
     const imgArray = [
-        project1, project2, project3, project4, project1
+        project1, project2, project1
     ]
   return (
     <div className='latest'>
-        <SmallerText p={'What prrojects we recently concluded'} h1={'Latest Project'}/>
+        <SmallerText p={'What projects we currently working on'} h1={'Latest Project'}/>
         <div className="caruosel-container">
             <div className="image-grid">
                 {

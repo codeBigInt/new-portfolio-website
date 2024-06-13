@@ -3,6 +3,7 @@
 .hero-container{
     padding-top: 1em;
     width: 100%;
+    min-height: 100vh;
     display: flex;
     color: var(--white);
     align-items: flex-start;
@@ -22,9 +23,10 @@
 .content{
     width: 90%;
     z-index: 2;
-    padding-bottom: 50px;
     display: flex;
+    height: 100%;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 nav{
@@ -52,6 +54,7 @@ nav{
     padding: .5em 1em;
     font-weight: 600;
     color: var(--white);
+    cursor: pointer;
     background: transparent;
 }
 .navLink:hover::before{
@@ -79,7 +82,7 @@ nav{
 
 
 .dwnLoad{
-    padding: .6em 1em;
+    padding: 1em 1.5em;
     border-radius: 20px;
     background: transparent;
     border: 2px solid var(--white);
@@ -95,7 +98,7 @@ nav{
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 2em 0 2em  0;
+    padding: 3em 0 1em  0;
     line-height: 2em;
     color: var(--white);
     position: relative;
@@ -107,7 +110,7 @@ nav{
     width: 100%;
     position: relative;
     gap: .5em;
-    padding-top: 1em;
+    padding-top: 4em;
 }
 .small-text{
     font-size: 14px;
@@ -177,17 +180,18 @@ nav{
     transform: scale(1.1, 1.1);
 }
 .connect{
-    padding: 1em;
     justify-content: center;
     background: transparent;
     border: 1px solid var(--white);
     gap: 2em;
+    padding: 1em;
+    border-radius: 5px;
 }
 .arrow{
     font-size: 10px;
     transform: rotate(45deg);
 }
-.controls{
+.controler{
     width: 100%;
     display: flex;
     gap: 1em;
@@ -203,7 +207,7 @@ nav{
 .social_icons{
     gap: 4em;
 }
-.controls button{
+.controler button{
     cursor: pointer;
     color: var(--white);
 }
@@ -213,17 +217,13 @@ nav{
 /* Typing text animation an styling */
 #typing{
     position: relative;
-    padding-right: 4px;
 }
 #typing::before{
-    top: 0; left: 0;
-    z-index: 1;
-    position: absolute;
+    top: 0; right: -83%;
+    position: relative;
     content: '';
     width: 100%;
     height: 100%;
-    background: var(--gradient);
-    animation: typing-text 4s steps(12) infinite;
     border-left: 3px solid var(--white);
 }
 .lobed_text{
@@ -232,24 +232,28 @@ nav{
     line-height: 1.5em;
 }
 
-@keyframes typing-text {
+/* @keyframes typing-text {
     40%, 60%{
         left: calc(100%);
     }
     100%{
         left: 100%;
     }
-}
+} */
 
 
 
 @media screen and (max-width: 900px) {
+    .hero-container{
+        min-height: 100%;
+        padding-bottom: 60px;
+    }
     .content{
         width: 100%;
         background: var(--gradient);
     }
     .content main{
-        padding-top: 90px;
+        padding-top: 70px;
     }
     .toggler{
         background: transparent;
@@ -334,7 +338,7 @@ nav{
     .socials{
         justify-content: center;
     }
-    .controls{
+    .controler{
         flex-direction: column;
     }
     .connect{

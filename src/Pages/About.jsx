@@ -8,9 +8,6 @@ import SmallerText from '../assets/utils/UI/SmallerText'
 const About = () => {
     return(
         <div className="about-container">
-            <header>
-                <LatestPoject />
-            </header>
             <main>
                 <div className="image-card">
                     <div className="sliced-image">

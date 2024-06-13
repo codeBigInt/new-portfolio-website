@@ -4,34 +4,48 @@ import { icons, navArray } from '../assets/utils/Array'
 import './CSS/Hero.css'
 import { useContext, useEffect, useState } from 'react'
 import { storeConetext } from '../context/store'
-// import doc from '../assets/utils/Lucky-Elliot-cv.docx'
+import doc from '../assets/luckyelliot.pdf'
 import { HiArrowDown } from 'react-icons/hi2'
 
 
 
 const Hero = () => {
     const [menuIsDisplayed, setMenuIsDisplayed] = useState(false)
+    const [currentTextIndex, setCurrentTextIndex] = useState(0);
+    const [currentCharIndex, setCurrentCharIndex] = useState(0);
+    const [displayedText, setDisplayedText] = useState('');
     const ctx = useContext(storeConetext)
-    const textLoader = [
-        'Remote',
-        'Freelance'
-    ]
+   
+    const texts = ['Remote', 'Freelance'];
+  const typingSpeed = 200; // milliseconds per character
+  const pauseBetweenTexts = 2000; // milliseconds between texts
 
-    useEffect(() => {
-        function updateText(){
-        setTimeout(() => {
-            document.querySelector('#typing').textContent = textLoader[0]
-        }, 0)
-            setTimeout(() => {
-                document.querySelector('#typing').textContent = textLoader[1]
-            }, 4000)
-    
-        }
-        updateText()
-        
-        setInterval(updateText, 8000)
-        return () => clearInterval(updateText)
-    }, [])
+  useEffect(() => {
+    if (currentTextIndex < texts.length) {
+      if (currentCharIndex < texts[currentTextIndex].length) {
+        const timeout = setTimeout(() => {
+          setDisplayedText(texts[currentTextIndex].substring(0, currentCharIndex + 1));
+          setCurrentCharIndex(currentCharIndex + 1);
+        }, typingSpeed);
+
+        return () => clearTimeout(timeout);
+      } else {
+        const pauseTimeout = setTimeout(() => {
+          setCurrentCharIndex(0);
+          setCurrentTextIndex(currentTextIndex + 1);
+        }, pauseBetweenTexts);
+
+        return () => clearTimeout(pauseTimeout);
+      }
+    } else {
+      // Loop back to the start (optional)
+      const loopTimeout = setTimeout(() => {
+        setCurrentTextIndex(0);
+      }, pauseBetweenTexts);
+
+      return () => clearTimeout(loopTimeout);
+    }
+  }, [currentCharIndex, currentTextIndex]);
 
     // Handle menu toggle event
    const handleMenu = (e) => {
@@ -88,7 +102,7 @@ const Hero = () => {
                          <button onClick={handleMenu} className={`toggler ${ctx.scrollHeight >= 650 ? 'black' : ''}`}>
                             { menuIsDisplayed ? <FaTimes /> : <FaHamburger /> }
                         </button>: <div className="nav_controls">
-                            <a href={`/`} download className="dwnLoad">
+                            <a href={doc} download className="dwnLoad">
                                 <FaDownload />
                                 <span>Download CV</span>
                             </a>
@@ -99,7 +113,7 @@ const Hero = () => {
                     <div className="intro-cont">
                                 <p className='intro'>Hi, i'm Elliot</p>
                                 <div className="typing_text">
-                                    <span>A <span id='typing'></span></span>
+                                    <span>A <span id='typing'>{displayedText}</span></span>
                                     <span className="lobed_text">  Frontend Developer</span>
                                 </div>
                                 <p className='small-text'>
@@ -116,7 +130,7 @@ const Hero = () => {
                                         }
                                     </ul>
                                 </div>
-                            <div className='controls'>
+                            <div className='controler'>
                                 <button onClick={() => {
                                     const elementToScrollTo = document.querySelector('#Contact')
                                     elementToScrollTo.scrollIntoView({

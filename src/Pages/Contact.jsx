@@ -2,8 +2,11 @@ import { FaEnvelopeCircleCheck, FaLocationDot, FaMapLocation, FaPhone } from 're
 import './CSS/Contact.css'
 import { FaArrowUp, FaDownload, FaTelegram, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa'
 import SmallerText from '../assets/utils/UI/SmallerText'
-import { useContext, useState } from 'react'
+import { useContext, useRef, useState } from 'react'
 import { storeConetext } from '../context/store'
+import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser'
+import Swal from 'sweetalert2'
 
 const Contact = () => {
     const reach = [
@@ -30,14 +33,21 @@ const Contact = () => {
     ]
     const [isFocused, setIsFocused] = useState(false)
     const [formData, setFormData] = useState({
-        email: '',
-        name: '',
-        text: ''
+        user_email: '',
+        user_name: '',
+        message: ''
     })
     const [hintIsDisplayed, setHintIsDisplayed] = useState(false)
     const [scrollHint, setScrollHint] = useState(false)
     const { scrollHeight, setScrollHeight } = useContext(storeConetext)
     console.log(scrollHeight);
+    const form = useRef();
+
+    const templateId = 'template_23o9mgj'
+    const serviceId = 'service_ie3rxz8'
+    const publicKey = '2M5EesimAgXKUJ8eN'
+
+
 
     function handleFocus(){
         setIsFocused(true)
@@ -53,20 +63,27 @@ const Contact = () => {
             }
         })
     }
-    const handleSendEmail = () => {
-        e.preventDefault()
-        window.Email.send({
-            Host : "smtp.elasticemail.com",
-            Username : "elliotlucky509@gmail.com",
-            Password : "0F72A888D0FC33CE5C402D9ABEC9D1864195",
-            To : 'elliotlucky509@gmail.com',
-            From : "you@isp.com",
-            Subject : "This is the subject",
-            Body : "And this is the body"
-        }).then(
-          message => alert(message)
-        );
-    }
+
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs
+          .sendForm(serviceId, templateId, form.current, {
+            publicKey: publicKey,
+          })
+          .then(
+            () => {
+              console.log('SUCCESS!');
+            },
+            (error) => {
+              console.log('FAILED...', error.text);
+            },
+          );
+
+          e.target.reset()
+      };
+    
     
     return(
         <div className="contact-container">
@@ -85,10 +102,10 @@ const Contact = () => {
                     ))
                 }
             </div>
-            <form onSubmit={(e) => handleSendEmail(e)}>
+            <form ref={form} onSubmit={(e) => sendEmail(e)}>
                 <div className={`field ${isFocused || formData.email ? 'focused' : ''}`}>
                     <label className='label' htmlFor="email">Preffered Email</label>
-                    <input className='input' type="email" name='email' value={formData.email}
+                    <input className='input' type="email" name='user_email' value={formData.user_email}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                     onChange={handleChange}
@@ -97,7 +114,7 @@ const Contact = () => {
                 </div>
                 <div className={`field ${isFocused || formData.name ? 'focused' : ''}`}>
                     <label className='label' htmlFor="name">Name</label>
-                    <input className='input' type="text" name='name' value={formData.name}
+                    <input className='input' type="text" name='user_name' value={formData.user_name}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                     onChange={handleChange}
@@ -106,7 +123,7 @@ const Contact = () => {
                 </div>
                 <div className={`field ${isFocused || formData.text ? 'focused' : ''}`}>
                     <label className='label' htmlFor="text-area">Type in message</label>
-                    <textarea className='input area' name="text" value={formData.text}
+                    <textarea className='input area' name="message" value={formData.message}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                     onChange={handleChange}
