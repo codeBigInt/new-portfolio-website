@@ -24,16 +24,25 @@
     text-align: center;
 }
 .showless{
-    background: rgb(63, 60, 71);
+    background: var(--white);
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color: var(--white);
+    color: black;
+    font-weight: 600;
     padding: 1em 2em;
     gap: 1em;
+    cursor: pointer;
+    position: absolute;
+    top: 7%; right: 3%;
     border-radius: 10px;
 }
+.showless:hover{
+    transform: scale(.95);
+    transition: .5s;
+}
 .readme-area{
+    position: relative;
     border-radius: 25px;
     align-self: flex-start;
     width: 100%;
@@ -79,7 +88,7 @@
     width: 100%;
 }
 .controls button, .controls a, .see{
-    padding: .6em 1em;
+    padding: 1em;
 }
 .controls a, .see{
     color: black;
@@ -138,8 +147,9 @@
 }
 .git_link_cont{
     display: flex;
-    align-items: center;
-    gap: 1em;
+    width: 80%;
+    flex-direction: column;
+    align-items: flex-start;
 }
 .visit{
     background: var(--gradient);
@@ -154,8 +164,10 @@
     margin-left: -500%;
 }
 .link_holder{
+    width: 100%;
     font-size: 14px;
-    overflow: hidden;
+    white-space: nowrap;
+    overflow-x: hidden;
 }
 .red, .yellow, .green{
     padding: .8em;
@@ -173,6 +185,11 @@
 }
 .load{
     display: flex;
+    gap: 1em;
+}
+.copy-area{
+    display: flex;
+    align-items: flex-end;
     gap: 1em;
 }
 
@@ -197,6 +214,7 @@
     }
     .copy-area{
         width: 100%;
+        display: flex;
     }
     .controls{
         flex-direction: column;

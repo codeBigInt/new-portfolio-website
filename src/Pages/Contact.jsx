@@ -42,6 +42,8 @@ const Contact = () => {
       reachInfo: "Abuja, Nigeria",
     },
   ];
+
+  const [isSending, setIsSending] = useState(false)
   const [isFocused, setIsFocused] = useState(false);
   const [formData, setFormData] = useState({
     user_email: "",
@@ -54,9 +56,9 @@ const Contact = () => {
   console.log(scrollHeight);
   const form = useRef();
 
-  const templateId = "template_1peihr9";
-  const serviceId = "service_ie3rxz8";
-  const publicKey = "2M5EesimAgXKUJ8eN";
+  const templateId = 'template_1peihr9'
+  const serviceId = 'service_ie3rxz8'
+  const publicKey = '2M5EesimAgXKUJ8eN'
 
   function handleFocus() {
     setIsFocused(true);
@@ -78,7 +80,8 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    
+    setIsSending(true)
     emailjs
       .sendForm(serviceId, templateId, form.current, {
         publicKey: publicKey,
@@ -90,7 +93,10 @@ const Contact = () => {
             icon: 'success',
             text: 'Email sent successfully'
           })
-          e.target.reset();
+          setFormData({
+            user_email: '', user_name: '', message: ''
+          })
+          setIsSending(false)
         },
         (error) => {
           Swal.fire({
@@ -100,14 +106,14 @@ const Contact = () => {
           })
         }
       );
-
   };
+  const emailNotValid = !formData.user_email.toString().toLocaleLowerCase().includes('@gmail.com')
 
   return (
     <div className="contact-container">
       <SmallerText
         p={`Get in touch, let's connect`}
-        h1={"Leave Me A Messsage"}
+        h1={"Contact Me"}
       />
       <div className="cont">
         <div className="quick-reach">
@@ -132,6 +138,7 @@ const Contact = () => {
               className="input"
               type="email"
               name="user_email"
+              value={formData.user_email}
               onFocus={handleFocus}
               onBlur={(e) => handleBlur(e)}
               onChange={handleChange}
@@ -148,6 +155,7 @@ const Contact = () => {
               className="input"
               type="text"
               name="user_name"
+              value={formData.user_name}
               onFocus={handleFocus}
               onBlur={handleBlur}
               onChange={handleChange}
@@ -169,8 +177,8 @@ const Contact = () => {
               required
             ></textarea>
           </div>
-          <button type="submit">
-            <span>Send Message</span>
+          <button disabled = {isSending || emailNotValid} type="submit">
+            <span>{ isSending ? 'Sending...' : 'Send Message' }</span>
             <span className="kite">
               <FaTelegram />
             </span>

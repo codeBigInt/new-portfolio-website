@@ -1,7 +1,8 @@
 .footer-cont{
     width: 90%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 20%;
     padding: 2em;
 }
 .quote{
@@ -42,5 +43,8 @@
     .my-socials{
         gap: 1.5em;
         font-size: 25px;
+    }
+    .follow{
+        margin-left: 0;
     }
 }

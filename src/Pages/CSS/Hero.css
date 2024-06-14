@@ -8,7 +8,7 @@
     color: var(--white);
     align-items: flex-start;
     justify-content: center;
-    background: linear-gradient(rgba(94, 40, 223, .6), rgba(94, 40, 223, .6)), url('../../assets/images/bg.jpg');
+    background: linear-gradient(rgba(94, 40, 223, .8), rgba(94, 40, 223, .6)), url('../../assets/images/bg.jpg');
     background-position: center;
     background-size: cover;
 }
@@ -21,7 +21,7 @@
     align-items: center;
 }
 .content{
-    width: 90%;
+    width: 85%;
     z-index: 2;
     display: flex;
     height: 100%;

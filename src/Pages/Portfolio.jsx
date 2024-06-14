@@ -10,20 +10,30 @@ import {
   FaRegCopy,
 } from "react-icons/fa";
 import SmallerText from "../assets/utils/UI/SmallerText";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import "./CSS/Portfolio.css";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { FaArrowUpFromBracket, FaCaretDown, FaGitAlt } from "react-icons/fa6";
+import { FaArrowLeft, FaArrowRight, FaArrowUpFromBracket, FaCaretDown, FaGitAlt } from "react-icons/fa6";
 import { projectsArr } from "../assets/ProjectArray";
 import { useContext, useState } from "react";
 import { storeConetext } from "../context/store";
+import { atelierCaveDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 const Portfolio = () => {
   const [isDisplayedId, setIsDisplayedId] = useState(null);
   const [copyId, setCopyId] = useState("");
   const [isCopied, setIsCopied] = useState(false);
   const [err, setErr] = useState("");
+  const [copied, setCopied] = useState(false);
   const ctx = useContext(storeConetext);
+
+  const onCopy = () => {
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 1000);
+  };
 
   function handleLinkCopy(projectLink, id) {
     if (copyId === id) {
@@ -66,9 +76,9 @@ const Portfolio = () => {
                   {ctx.mediaWidth >= 900 && (
                     <button onClick={(e) => handleDisplay(projects.id, e)}>
                       {isDisplayedId === projects.id ? (
-                        <FaCaretUp />
-                      ) : (
                         <FaCaretDown />
+                      ) : (
+                        <FaArrowRight />
                       )}
                     </button>
                   )}
@@ -76,25 +86,17 @@ const Portfolio = () => {
                 <p className="desc">{projects.desc}</p>
                 <div className="controls">
                   <div className="copy-area">
-                    <p>View Codes On Github</p>
                     <div className="git_link_cont">
+                      <p>View Codes On Github</p>
                       <span className="link_holder">{projects.gitLink}</span>
-                      {copyId === projects.id && isCopied ? (
-                        <button className="visit">
-                          <FaCheck />
-                        </button>
-                      ) : (
-                        <button
-                          onClick={() => {
-                            setCopyId(projects.id);
-                            handleLinkCopy(projects.gitLink, projects.id);
-                          }}
-                          className="visit"
-                        >
-                          <FaRegCopy />
-                        </button>
-                      )}
                     </div>
+                    {
+                      <CopyToClipboard text={projects.gitLink} onCopy={onCopy}>
+                        <button className="visit">
+                          {copied ? <FaCheck /> : <FaRegCopy />}
+                        </button>
+                      </CopyToClipboard>
+                    }
                   </div>
                   <div className="project-go">
                     <a href={projects.visitLink} target="_blank">
@@ -120,23 +122,14 @@ const Portfolio = () => {
             </div>
             {isDisplayedId === projects.id && (
               <div className="readme-area">
-                <div className="readme-header">
-                  <p className="readme">
-                    <span>ReadMe.md</span>
-                  </p>
-                  <div className="load">
-                    <span className="red"></span>
-                    <span className="yellow"></span>
-                    <span className="green"></span>
-                  </div>
-                </div>
                 <SyntaxHighlighter
                   customStyle={{
                     borderRadius: "25px",
-                    flexWrap: "wrap",
+                    whiteSpace: 'normal',
+                    overflow: 'hidden'
                   }}
                   language="readme"
-                  style={atomOneDark}
+                  style={atelierCaveDark}
                 >
                   {projects.readme}
                 </SyntaxHighlighter>
