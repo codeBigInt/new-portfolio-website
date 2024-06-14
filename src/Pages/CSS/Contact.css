@@ -156,7 +156,7 @@ form button{
 @media screen and (max-width: 900px) {
     .cont{
         width: 85%;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         gap: 2em;
     }
@@ -172,6 +172,7 @@ form button{
     }
     form{
         width: 85%;
+        margin: 1.5em 0;
     }
     form button{
         width: 80%;
@@ -181,5 +182,7 @@ form button{
     }
 }
 @media screen and (max-width: 600px) {
-    
+    form button{
+        width: 100%;
+    } 
 }

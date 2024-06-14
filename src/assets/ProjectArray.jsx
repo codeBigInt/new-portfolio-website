@@ -1,15 +1,16 @@
-import project1 from './images/quiz.png'
+import project1 from "./images/quiz.png";
 
 export const projectsArr = [
-    {
-        id: '1',
-        image: project1,
-        gitLink: 'https://github.com/codeBigInt/Release-Version-of-Quiz-Lead.git',
-        visitLink: 'https://quiz-lead-r99xsk9eo-elliot-luckys-projects.vercel.app/',
-        projectTitle: 'Quiz Lead',
-        fullDetail: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam aspernatur tenetur unde facere quos mollitia voluptatem perspiciatis natus, corporis sequi incidunt porro error hic nemo eligendi magni cum, recusandae similique!',
-        desc: 'Built With ReactJs & FireBase. The Quiz Lead Applicationn helps students from my college pratice for examinations before hand, get graded, review mistakes they made after submission and grading',
-        readme: `
+  {
+    id: "1",
+    image: project1,
+    gitLink: "https://github.com/codeBigInt/Release-Version-of-Quiz-Lead.git",
+    visitLink: "https://quiz-lead-r99xsk9eo-elliot-luckys-projects.vercel.app/",
+    projectTitle: "Quiz Lead",
+    fullDetail:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam aspernatur tenetur unde facere quos mollitia voluptatem perspiciatis natus, corporis sequi incidunt porro error hic nemo eligendi magni cum, recusandae similique!",
+    desc: "Built With ReactJs & FireBase. The Quiz Lead Applicationn helps students from my college pratice for examinations before hand, get graded, review mistakes they made after submission and grading",
+    readme: `
         Quiz Laed
         
         ## Description
@@ -32,5 +33,6 @@ export const projectsArr = [
         '/'/'/ Run -> npm run dev
 
         Happy Hacking 🎉
-    `}
-]
+    `,
+  },
+];

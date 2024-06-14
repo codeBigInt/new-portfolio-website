@@ -233,16 +233,6 @@ nav{
     line-height: 1.5em;
 }
 
-/* @keyframes typing-text {
-    40%, 60%{
-        left: calc(100%);
-    }
-    100%{
-        left: 100%;
-    }
-} */
-
-
 
 @media screen and (max-width: 900px) {
     .hero-container{
@@ -336,7 +326,6 @@ nav{
         padding: 0 1em;
     }
     .socials{
-        align-self: center;
         justify-content: center;
     }
     .controler{
@@ -360,6 +349,9 @@ nav{
 @media screen and (max-width: 600px) {
     .connect{
         width: 80%;
+    }
+    .socials{
+        margin-left: -8%;
     }
 }
 
