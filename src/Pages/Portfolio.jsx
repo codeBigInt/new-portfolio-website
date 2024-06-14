@@ -126,7 +126,6 @@ const Portfolio = () => {
                   customStyle={{
                     borderRadius: "25px",
                     whiteSpace: 'normal',
-                    overflow: 'hidden'
                   }}
                   language="readme"
                   style={atelierCaveDark}
