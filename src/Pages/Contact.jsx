@@ -54,7 +54,7 @@ const Contact = () => {
   console.log(scrollHeight);
   const form = useRef();
 
-  const templateId = "template_23o9mgj";
+  const templateId = "template_1peihr9";
   const serviceId = "service_ie3rxz8";
   const publicKey = "2M5EesimAgXKUJ8eN";
 
@@ -85,10 +85,18 @@ const Contact = () => {
       })
       .then(
         () => {
-          console.log("SUCCESS!");
+          Swal.fire({
+            title: 'Sucess',
+            icon: 'success',
+            text: 'Email sent successfully'
+          })
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          Swal.fire({
+            title: 'Opps!',
+            icon: 'error',
+            text: 'Failed to send email'
+          })
         }
       );
 
@@ -115,7 +123,7 @@ const Contact = () => {
         </div>
         <form ref={form} onSubmit={(e) => sendEmail(e)}>
           <div
-            className={`field ${isFocused || formData.email ? "focused" : ""}`}
+            className={`field ${isFocused || formData.user_email ? "focused" : ""}`}
           >
             <label className="label" htmlFor="email">
               Preffered Email
@@ -124,7 +132,6 @@ const Contact = () => {
               className="input"
               type="email"
               name="user_email"
-              value={formData.user_email}
               onFocus={handleFocus}
               onBlur={(e) => handleBlur(e)}
               onChange={handleChange}
@@ -141,7 +148,6 @@ const Contact = () => {
               className="input"
               type="text"
               name="user_name"
-              value={formData.user_name}
               onFocus={handleFocus}
               onBlur={handleBlur}
               onChange={handleChange}
@@ -157,7 +163,6 @@ const Contact = () => {
             <textarea
               className="input area"
               name="message"
-              value={formData.message}
               onFocus={handleFocus}
               onBlur={handleBlur}
               onChange={handleChange}
