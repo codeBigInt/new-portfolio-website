@@ -90,6 +90,7 @@ const Contact = () => {
             icon: 'success',
             text: 'Email sent successfully'
           })
+          e.target.reset();
         },
         (error) => {
           Swal.fire({
@@ -100,7 +101,6 @@ const Contact = () => {
         }
       );
 
-    e.target.reset();
   };
 
   return (
