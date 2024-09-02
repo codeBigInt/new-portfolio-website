@@ -176,8 +176,7 @@ const Hero = () => {
               <span className="lobed_text"> Frontend Developer</span>
             </div>
             <p className="small-text">
-              With 3+ Years of Personal experience & 7year of Collective Team
-              Experience <br />
+              With 3+ Years of Personal experience <br />
               Let's Build Your Next Big project together
             </p>
             <div className="socials">
