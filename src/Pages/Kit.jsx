@@ -14,6 +14,7 @@ import {
   FaRegIdBadge,
 } from "react-icons/fa";
 import { RiNextjsFill, RiRemixRunFill } from "react-icons/ri";
+import { BiLogoTypescript } from "react-icons/bi";
 import "./CSS/Services.css";
 import {
   FaBootstrap,
@@ -58,11 +59,15 @@ const Kit = () => {
     },
     {
         icon: <RiNextjsFill />,
-        lang: 'Next JS'
+        title: "Next JS",
     },
     {
         icon: <RiRemixRunFill />,
-        lang: 'Remix JS'
+        title: "Remix JS",
+    },
+    {
+        icon: <BiLogoTypescript />,
+        title: "Typescript",
     },
     {
       icon: <FaGithub />,
