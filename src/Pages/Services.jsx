@@ -59,7 +59,7 @@ const Services = () => {
   ];
   return (
     <div className="service-container">
-      <SmallerText p={"What services we can offer you"} h1={"Services"} />
+      <SmallerText p={"What services I can offer you"} h1={"Services"} />
       <main>
         <ul className="services-list">
           {services.map((listItem) => (
