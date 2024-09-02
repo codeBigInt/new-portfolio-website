@@ -55,7 +55,7 @@ const Kit = () => {
     },
     {
       icon: <FaReact />,
-      title: "ReactJs",
+      title: "React JS",
     },
     {
         icon: <RiNextjsFill />,
@@ -83,7 +83,7 @@ const Kit = () => {
     },
     {
       icon: <FaNodeJs />,
-      title: "Nodejs",
+      title: "Node JS",
     },
     {
       icon: <FaReact />,
