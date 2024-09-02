@@ -1,7 +1,8 @@
 import { FaBabyCarriage, FaBootstrap, FaBriefcase, FaCss3, FaCss3Alt, FaEnvelope, FaFacebook, FaFigma, FaFire, FaGit, FaGithub, FaGraduationCap, FaInbox, FaInfoCircle, FaJsSquare, FaLinkedinIn, FaMailBulk, FaNode, FaNodeJs, FaNpm, FaPersonBooth, FaPhone, FaPhoneAlt, FaProjectDiagram, FaReact, FaSchool, FaSuitcaseRolling, FaToolbox, FaTwitter, FaUser, FaWhatsapp } from 'react-icons/fa'
-import { FaX, FaXTwitter } from 'react-icons/fa6'
-import { GiMailShirt } from 'react-icons/gi'
-import { HiCode } from 'react-icons/hi'
+import { FaX, FaXTwitter } from 'react-icons/fa6';
+import { RiNextjsFill, RiRemixRunFill } from "react-icons/ri";
+import { GiMailShirt } from 'react-icons/gi';
+import { HiCode } from 'react-icons/hi';
 
 
 export const navArray = [
@@ -64,6 +65,14 @@ export const Technologies = [
     {
         icon: <FaReact />,
         lang: 'REACT JS'
+    },
+    {
+        icon: <RiNextjsFill />,
+        lang: 'Next JS'
+    },
+    {
+        icon: <RiRemixRunFill />,
+        lang: 'Remix JS'
     },
     {
         icon: <FaToolbox />,
