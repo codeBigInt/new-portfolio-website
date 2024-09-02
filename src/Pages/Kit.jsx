@@ -14,6 +14,7 @@ import {
   FaRegIdBadge,
 } from "react-icons/fa";
 import { RiNextjsFill, RiRemixRunFill } from "react-icons/ri";
+import { SiReactquery } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import "./CSS/Services.css";
 import {
@@ -88,6 +89,10 @@ const Kit = () => {
     {
       icon: <FaReact />,
       title: "Redux Toolkit",
+    },
+    {
+      icon: <SiReactquery />,
+      title: "React Query",
     },
   ];
   return (
