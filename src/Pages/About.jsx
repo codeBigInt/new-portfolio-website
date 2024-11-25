@@ -3,6 +3,7 @@ import me from "../assets/images/me.jpeg";
 import { ability, icons } from "../assets/utils/Array";
 import { FaDownload, FaGg, FaGgCircle } from "react-icons/fa";
 import SmallerText from "../assets/utils/UI/SmallerText";
+import doc from "../assets/Elliot's New CV.pdf"
 
 const About = () => {
   return (
@@ -38,7 +39,7 @@ const About = () => {
                 <a href={items.href}>{items.icon}</a>
               ))}
             </div>
-            <a href="/" download className="about-btn">
+            <a href={doc} download className="about-btn">
               <span>Download CV</span>
               <span>
                 <FaDownload />
