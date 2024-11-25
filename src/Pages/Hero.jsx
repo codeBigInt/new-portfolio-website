@@ -42,7 +42,7 @@ import { icons, navArray } from "../assets/utils/Array";
 import "./CSS/Hero.css";
 import { useContext, useEffect, useState } from "react";
 import { storeConetext } from "../context/store";
-import doc from "../assets/luckyelliot.pdf";
+import doc from "../assets/Elliot's New CV.pdf";
 import { HiArrowDown } from "react-icons/hi2";
 
 const Hero = () => {
